@@ -45,7 +45,7 @@ Begin VB.Form frmfull
       OtherAttributes =   ""
       UserName        =   ""
       Password        =   ""
-      RecordSource    =   "select *  from fulldetails"
+      RecordSource    =   $"frmfull.frx":0000
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -59,7 +59,7 @@ Begin VB.Form frmfull
       _Version        =   393216
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
-      Bindings        =   "frmfull.frx":0000
+      Bindings        =   "frmfull.frx":00F8
       Height          =   4935
       Left            =   240
       TabIndex        =   3
@@ -167,7 +167,7 @@ Begin VB.Form frmfull
    Begin VB.Image Image3 
       Height          =   615
       Left            =   5400
-      Picture         =   "frmfull.frx":0015
+      Picture         =   "frmfull.frx":010D
       Stretch         =   -1  'True
       Top             =   6000
       Width           =   615
@@ -175,7 +175,7 @@ Begin VB.Form frmfull
    Begin VB.Image Image1 
       Height          =   495
       Left            =   5880
-      Picture         =   "frmfull.frx":40A3
+      Picture         =   "frmfull.frx":419B
       Stretch         =   -1  'True
       Top             =   240
       Width           =   495
@@ -213,7 +213,7 @@ End Sub
 
 
 Private Sub Form_Load()
-    'Adodc1.Recordset.AddNew
+    Adodc1.RecordSource = "select * from fulldetails"
     Set DataGrid1.DataSource = Adodc1.Recordset
     Adodc1.Refresh
 End Sub
